@@ -266,4 +266,15 @@ TypeScript = TokenizableLanguage(
     ]
 )
 
+Odin = TokenizableLanguage(
+    identifiers = [
+        TokenIdentifier("keyword", r"(package|import|proc|struct|enum|union|bit_field|map|defer|for|if|else|when|switch|case|fallthrough|break|continue|return|transmute|foreign|context|using|distinct|in|do|size_of|any|typeid|typeif_of)\b"),
+        TokenIdentifier("keyword literal", r"(false|nil|true)\b"),
+        TokenIdentifier("comment", r"//[^\n]*|/\*[\s\S]*?\*/"),
+        TokenIdentifier("symbol", r"(\+|\-|\*|/|%|=|!=|==|<=|>=|<|>|::|:|,|\.|\[|\]|\(|\)|\{|\}|&|\||\^|~|<<|>>|\?|\!\?)"),
+        TokenIdentifier("string", r'"(?:\\.|[^"\\])*"'),
+        TokenIdentifier("number", r"(\b\d+(\.\d+)?([eE][+\-]?\d+)?|0x[0-9a-fA-F]+|0b[01]+|0o[0-7]+)\b")
+    ]
+)
+
 # XML
